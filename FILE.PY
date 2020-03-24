@@ -53,3 +53,8 @@ def process_docs(directory, is_trian):
 		# add to list
 		documents.append(tokens)
 	return documents
+
+	# save a dataset to file
+def save_dataset(dataset, filename):
+	dump(dataset, open(filename, 'wb'))
+	print('Saved: %s' % filename)
