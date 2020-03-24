@@ -58,3 +58,12 @@ def process_docs(directory, is_trian):
 def save_dataset(dataset, filename):
 	dump(dataset, open(filename, 'wb'))
 	print('Saved: %s' % filename)
+
+
+# load all training reviews
+negative_docs = process_docs('txt_sentoken/neg', True)
+positive_docs = process_docs('txt_sentoken/pos', True)
+trainX = negative_docs + positive_docs
+trainy = [0 for _ in range(900)] + [1 for _ in range(900)]
+save_dataset([trainX,trainy], 'train.pkl')
+ 
