@@ -73,3 +73,11 @@ positive_docs = process_docs('txt_sentoken/pos', False)
 testX = negative_docs + positive_docs
 testY = [0 for _ in range(100)] + [1 for _ in range(100)]
 save_dataset([testX,testY], 'test.pkl') 
+
+## Develop model
+
+# load a clean dataset
+def load_dataset(filename):
+	return load(open(filename, 'rb'))
+ 
+trainLines, trainLabels = load_dataset('train.pkl')
