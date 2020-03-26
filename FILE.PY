@@ -66,4 +66,10 @@ positive_docs = process_docs('txt_sentoken/pos', True)
 trainX = negative_docs + positive_docs
 trainy = [0 for _ in range(900)] + [1 for _ in range(900)]
 save_dataset([trainX,trainy], 'train.pkl')
- 
+
+# load all test reviews
+negative_docs = process_docs('txt_sentoken/neg', False)
+positive_docs = process_docs('txt_sentoken/pos', False)
+testX = negative_docs + positive_docs
+testY = [0 for _ in range(100)] + [1 for _ in range(100)]
+save_dataset([testX,testY], 'test.pkl') 
