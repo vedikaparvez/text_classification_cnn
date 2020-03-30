@@ -91,3 +91,6 @@ def create_tokenizer(lines):
 # calculate the maximum document length
 def max_length(lines):
 	return max([len(s.split()) for s in lines])
+
+# calculate vocabulary size
+vocab_size = len(tokenizer.word_index) + 1
