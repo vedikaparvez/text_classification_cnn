@@ -81,3 +81,9 @@ def load_dataset(filename):
 	return load(open(filename, 'rb'))
  
 trainLines, trainLabels = load_dataset('train.pkl')
+
+# fit a tokenizer
+def create_tokenizer(lines):
+	tokenizer = Tokenizer()
+	tokenizer.fit_on_texts(lines)
+	return tokenizer
