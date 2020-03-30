@@ -87,3 +87,7 @@ def create_tokenizer(lines):
 	tokenizer = Tokenizer()
 	tokenizer.fit_on_texts(lines)
 	return tokenizer
+
+# calculate the maximum document length
+def max_length(lines):
+	return max([len(s.split()) for s in lines])
