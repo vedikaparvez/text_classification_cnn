@@ -94,3 +94,11 @@ def max_length(lines):
 
 # calculate vocabulary size
 vocab_size = len(tokenizer.word_index) + 1
+
+# encode a list of lines
+def encode_text(tokenizer, lines, length):
+	# integer encode
+	encoded = tokenizer.texts_to_sequences(lines)
+	# pad encoded sequences
+	padded = pad_sequences(encoded, maxlen=length, padding='post')
+	return padded
