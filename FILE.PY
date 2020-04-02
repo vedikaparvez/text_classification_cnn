@@ -102,3 +102,14 @@ def encode_text(tokenizer, lines, length):
 	# pad encoded sequences
 	padded = pad_sequences(encoded, maxlen=length, padding='post')
 	return padded
+
+
+# define the model
+def define_model(length, vocab_size):
+	# channel 1
+	inputs1 = Input(shape=(length,))
+	embedding1 = Embedding(vocab_size, 100)(inputs1)
+	conv1 = Conv1D(filters=32, kernel_size=4, activation='relu')(embedding1)
+	drop1 = Dropout(0.5)(conv1)
+	pool1 = MaxPooling1D(pool_size=2)(drop1)
+	flat1 = Flatten()(pool1)
