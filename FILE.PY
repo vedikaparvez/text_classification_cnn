@@ -120,3 +120,10 @@ def define_model(length, vocab_size):
 	drop2 = Dropout(0.5)(conv2)
 	pool2 = MaxPooling1D(pool_size=2)(drop2)
 	flat2 = Flatten()(pool2)
+	# channel 3
+	inputs3 = Input(shape=(length,))
+	embedding3 = Embedding(vocab_size, 100)(inputs3)
+	conv3 = Conv1D(filters=32, kernel_size=8, activation='relu')(embedding3)
+	drop3 = Dropout(0.5)(conv3)
+	pool3 = MaxPooling1D(pool_size=2)(drop3)
+	flat3 = Flatten()(pool3)
