@@ -129,3 +129,7 @@ def define_model(length, vocab_size):
 	flat3 = Flatten()(pool3)
 	# merge
 	merged = concatenate([flat1, flat2, flat3])
+	# interpretation
+	dense1 = Dense(10, activation='relu')(merged)
+	outputs = Dense(1, activation='sigmoid')(dense1)
+	model = Model(inputs=[inputs1, inputs2, inputs3], outputs=outputs)
