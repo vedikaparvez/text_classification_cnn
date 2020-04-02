@@ -127,3 +127,5 @@ def define_model(length, vocab_size):
 	drop3 = Dropout(0.5)(conv3)
 	pool3 = MaxPooling1D(pool_size=2)(drop3)
 	flat3 = Flatten()(pool3)
+	# merge
+	merged = concatenate([flat1, flat2, flat3])
