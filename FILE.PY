@@ -142,3 +142,6 @@ def define_model(length, vocab_size):
 
 # load training dataset
 trainLines, trainLabels = load_dataset('train.pkl')
+
+# create tokenizer
+tokenizer = create_tokenizer(trainLines)
