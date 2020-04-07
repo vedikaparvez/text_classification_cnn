@@ -133,3 +133,6 @@ def define_model(length, vocab_size):
 	dense1 = Dense(10, activation='relu')(merged)
 	outputs = Dense(1, activation='sigmoid')(dense1)
 	model = Model(inputs=[inputs1, inputs2, inputs3], outputs=outputs)
+	# compile
+	model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+	# summarize
