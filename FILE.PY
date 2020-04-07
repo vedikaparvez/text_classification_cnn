@@ -136,3 +136,6 @@ def define_model(length, vocab_size):
 	# compile
 	model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 	# summarize
+	print(model.summary())
+	plot_model(model, show_shapes=True, to_file='multichannel.png')
+	return model
