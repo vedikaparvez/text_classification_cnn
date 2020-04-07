@@ -139,3 +139,6 @@ def define_model(length, vocab_size):
 	print(model.summary())
 	plot_model(model, show_shapes=True, to_file='multichannel.png')
 	return model
+
+# load training dataset
+trainLines, trainLabels = load_dataset('train.pkl')
