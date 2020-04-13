@@ -157,3 +157,6 @@ print('Vocabulary size: %d' % vocab_size)
 # encode data
 trainX = encode_text(tokenizer, trainLines, length)
 print(trainX.shape)
+
+# define model
+model = define_model(length, vocab_size)
