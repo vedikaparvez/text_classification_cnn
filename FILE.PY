@@ -166,3 +166,8 @@ model.fit([trainX,trainX,trainX], array(trainLabels), epochs=10, batch_size=16)
 
 # save the model
 model.save('model.h5')
+
+## Evaluate model
+# load datasets
+trainLines, trainLabels = load_dataset('train.pkl')
+testLines, testLabels = load_dataset('test.pkl')
