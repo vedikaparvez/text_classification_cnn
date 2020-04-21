@@ -182,3 +182,6 @@ length = max_length(trainLines)
 vocab_size = len(tokenizer.word_index) + 1
 print('Max document length: %d' % length)
 print('Vocabulary size: %d' % vocab_size)
+
+# define model
+model = define_model(length, vocab_size)
