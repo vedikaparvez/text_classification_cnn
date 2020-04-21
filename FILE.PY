@@ -185,3 +185,6 @@ print('Vocabulary size: %d' % vocab_size)
 
 # define model
 model = define_model(length, vocab_size)
+
+# fit model
+model.fit([trainX,trainX,trainX], array(trainLabels), epochs=10, batch_size=16)
