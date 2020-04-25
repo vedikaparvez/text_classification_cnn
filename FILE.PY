@@ -196,3 +196,6 @@ model.save('model.h5')
 # load datasets
 trainLines, trainLabels = load_dataset('train.pkl')
 testLines, testLabels = load_dataset('test.pkl')
+
+# create tokenizer
+tokenizer = create_tokenizer(trainLines)
