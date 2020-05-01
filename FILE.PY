@@ -208,3 +208,8 @@ vocab_size = len(tokenizer.word_index) + 1
 
 print('Max document length: %d' % length)
 print('Vocabulary size: %d' % vocab_size)
+
+# encode data
+trainX = encode_text(tokenizer, trainLines, length)
+testX = encode_text(tokenizer, testLines, length)
+print(trainX.shape, testX.shape)
