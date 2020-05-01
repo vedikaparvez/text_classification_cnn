@@ -213,3 +213,11 @@ print('Vocabulary size: %d' % vocab_size)
 trainX = encode_text(tokenizer, trainLines, length)
 testX = encode_text(tokenizer, testLines, length)
 print(trainX.shape, testX.shape)
+
+# load the model
+model = load_model('model.h5')
+ 
+# evaluate model on training dataset
+loss, acc = model.evaluate([trainX,trainX,trainX], array(trainLabels), verbose=0)
+print('Train Accuracy: %f' % (acc*100))
+ 
