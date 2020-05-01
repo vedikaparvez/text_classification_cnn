@@ -199,3 +199,6 @@ testLines, testLabels = load_dataset('test.pkl')
 
 # create tokenizer
 tokenizer = create_tokenizer(trainLines)
+
+# calculate max document length
+length = max_length(trainLines)
