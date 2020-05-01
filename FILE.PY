@@ -220,4 +220,7 @@ model = load_model('model.h5')
 # evaluate model on training dataset
 loss, acc = model.evaluate([trainX,trainX,trainX], array(trainLabels), verbose=0)
 print('Train Accuracy: %f' % (acc*100))
- 
+
+# evaluate model on test dataset dataset
+loss, acc = model.evaluate([testX,testX,testX],array(testLabels), verbose=0)
+print('Test Accuracy: %f' % (acc*100))
