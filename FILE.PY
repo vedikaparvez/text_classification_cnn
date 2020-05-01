@@ -202,3 +202,6 @@ tokenizer = create_tokenizer(trainLines)
 
 # calculate max document length
 length = max_length(trainLines)
+
+# calculate vocabulary size
+vocab_size = len(tokenizer.word_index) + 1
